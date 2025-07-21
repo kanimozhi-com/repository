@@ -1,11 +1,14 @@
-name: Test Self-Hosted Runner
+name: Parent Workflow
 
 on:
-  workflow_dispatch:  # Run manually from GitHub UI
+  push:
+    branches: [main]
 
 jobs:
-  test:
-    runs-on: self-hosted  # This runs on your own machine
-    steps:
-      - name: Check runner is working
-        run: echo "🎉 Self-hosted runner is working!"
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+
+    - name: runner check
+      run: echo "successfully completed"
