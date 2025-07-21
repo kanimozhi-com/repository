@@ -5,10 +5,11 @@ on:
     branches: [main]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout code
-      uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
 
-    - name: runner check
-      run: echo "successfully completed"
+      - name: runner check
+        run: echo "successfully completed"
