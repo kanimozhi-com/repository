@@ -7,5 +7,5 @@ jobs:
   child-job:
     runs-on: self-hosted
     steps:
-      - name: Say hello from child
+      - name: Child step
         run: echo "Hello from child workflow!"
