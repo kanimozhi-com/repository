@@ -1,11 +1,15 @@
 name: Child Workflow
 
 on:
-  workflow_call:
-
+  push:
+    branches: [main]
+    
 jobs:
-  child-job:
+  build:
+    name: Parent Workflow
+    
     runs-on: self-hosted
+    
     steps:
       - name: Child step
         run: echo "Hello from child workflow!"
