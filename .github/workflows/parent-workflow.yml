@@ -5,7 +5,4 @@ on:
 
 jobs:
   call-child:
-    uses: .github/workflows/child-workflow.yml
-    with:
-      name: "GitHub User"
-    secrets: inherit
+    uses: ./.github/workflows/child-workflow.yml
