@@ -7,9 +7,9 @@ on:
       - completed #trigger only when the parent workflow completed
     
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
-      - name: deploy
+      - name: build
         run: echo "Hello from child workflow!"
