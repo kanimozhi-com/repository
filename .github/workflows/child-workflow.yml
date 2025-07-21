@@ -1,13 +1,11 @@
 name: Child Workflow
 
 on:
-  workflow_run:
-  workflows: ["Parent Workflow"]
-  types:
-    - completed
+  workflow_call:
 
 jobs:
-  child_job:
+  child-job:
     runs-on: self-hosted
     steps:
-      - run: echo "👋 Hello from the child workflow"
+      - name: Say hello from child
+        run: echo "Hello from child workflow!"
