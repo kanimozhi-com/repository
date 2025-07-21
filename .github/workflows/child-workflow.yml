@@ -1,12 +1,15 @@
 name: Child Workflow
 
 on:
-  call: Parent Workflow
+  workflow_run:
+    workflows: ["Parent Workflow"]  #matches name of the parent 
+    types:
+      - completed #trigger only when the parent workflow completed
     
 jobs:
-  child-job:
-    runs-on: self-hosted
+  deploy:
+    runs-on: ubuntu-latest
     
-  steps:
-    - name: Child step
-      run: echo "Hello from child workflow!"
+    steps:
+      - name: deploy
+        run: echo "Hello from child workflow!"
