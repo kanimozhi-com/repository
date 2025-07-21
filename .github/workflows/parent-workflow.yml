@@ -11,5 +11,5 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: runner check
+      - name: run
         run: echo "successfully completed"
