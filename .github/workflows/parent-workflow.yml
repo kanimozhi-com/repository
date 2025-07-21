@@ -1,8 +1,11 @@
-name: Parent Workflow
+name: Test Self-Hosted Runner
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Run manually from GitHub UI
 
 jobs:
-  call-child:
-    uses: ./.github/workflows/child-workflow.yml
+  test:
+    runs-on: self-hosted  # This runs on your own machine
+    steps:
+      - name: Check runner is working
+        run: echo "🎉 Self-hosted runner is working!"
