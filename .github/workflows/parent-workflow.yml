@@ -1,0 +1,11 @@
+name: Parent Workflow
+
+on:
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  call-child:
+    uses: ./.github/workflows/child-workflow.yml
+    with:
+      name: "GitHub User"
+    secrets: inherit
