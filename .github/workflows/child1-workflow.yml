@@ -1,1 +1,13 @@
+name: Childtwo Workflow
 
+on:
+  workflow_run:
+    workflows: Child Workflow
+    types: completed
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: child file
+        run: echo "second child"
